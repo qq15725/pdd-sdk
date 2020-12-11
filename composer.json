@@ -1,0 +1,33 @@
+{
+  "name": "wxm/pdd-sdk",
+  "type": "library",
+  "description": "拼多多 SDK 封装, 调用简单、语义化增强。支持 Laravel/Lumen。",
+  "keywords": [
+    "pdd",
+    "pinduoduo",
+    "sdk",
+    "kernel",
+    "laravel",
+    "lumen",
+    "php"
+  ],
+  "homepage": "https://github.com/qq15725/pdd-sdk",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "wxm",
+      "email": "157215725@qq.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.3",
+    "wxm/sdk-kernel": "^1.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pdd\\": "src/"
+    }
+  },
+  "minimum-stability": "dev"
+}
