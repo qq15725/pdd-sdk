@@ -7,6 +7,8 @@ use SDK\Kernel\Exceptions\InvalidArgumentException;
 
 /**
  * @property \Pdd\Ddk\Goods\Goods $goods
+ * @property \Pdd\Ddk\Resource\Resource $resource
+ * @property \Pdd\Ddk\Cms\Cms $cms
  */
 class Ddk extends BaseClient
 {

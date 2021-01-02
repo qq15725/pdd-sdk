@@ -38,3 +38,5 @@ $pdd->ddk->goods->search();
 
 - pdd.ddk.goods.search 多多进宝商品查询
 - pdd.ddk.goods.zs.unit.url.gen 多多进宝转链接口
+- pdd.ddk.cms.prom.url.generate 生成商城-频道推广链接
+- pdd.ddk.resource.url.gen 生成多多进宝频道推广

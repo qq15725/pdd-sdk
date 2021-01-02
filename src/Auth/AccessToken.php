@@ -39,7 +39,7 @@ class AccessToken extends BaseAccessToken
         ksort($params);
         $stringToBeSigned = $secretKey;
         foreach ($params as $k => $v) {
-            if (!is_array($v) && $v) {
+            if (!is_array($v) && ($v !== '' && $v !== null)) {
                 $stringToBeSigned .= "$k$v";
             }
         }
