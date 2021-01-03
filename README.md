@@ -34,7 +34,7 @@ $pdd = new Application('app_key', 'secret_key');
 $pdd->ddk->goods->search();
 ```
 
-## APIS
+## [多多客API](https://jinbao.pinduoduo.com/third-party/rank)
 
 推广位PID管理
 
@@ -76,7 +76,3 @@ $pdd->ddk->goods->search();
 - [ ] pdd.ddk.order.list.increment.get 按更新时间同步已支付后的订单
 - [ ] pdd.ddk.order.list.range.get 按支付时间段查询订单
 - [ ] pdd.ddk.order.detail.get 查询订单详情 
-
-## 相关
-
-- [多多客API](https://jinbao.pinduoduo.com/third-party/rank)
