@@ -21,6 +21,15 @@ class BaseClient extends KernelBaseClient
     {
         if ($method == 'POST') {
             $options['form_params']['type'] = $url;
+            foreach ($options['form_params'] as &$v) {
+                if (is_array($v)) {
+                    $v = json_encode($v);
+                } else if ($v === true) {
+                    $v = 'true';
+                } else if ($v === false) {
+                    $v = 'false';
+                }
+            }
         }
         return parent::request('', $method, $options, $returnRaw);
     }

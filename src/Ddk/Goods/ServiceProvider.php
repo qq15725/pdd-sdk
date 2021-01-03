@@ -9,12 +9,13 @@ class ServiceProvider implements ServiceProviderInterface
 {
     protected $providers = [
         Zs\ServiceProvider::class,
+        Promotion\ServiceProvider::class,
     ];
 
     public function register(Container $app)
     {
         $app['ddk.goods'] = function ($app) {
-            /** @var \Jd\Application $app */
+            /** @var \Pdd\Application $app */
             $app->registerProviders($this->providers);
 
             return new Goods($app);

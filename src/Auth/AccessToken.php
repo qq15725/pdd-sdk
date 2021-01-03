@@ -34,14 +34,15 @@ class AccessToken extends BaseAccessToken
         return $request->withBody(Utils::streamFor(http_build_query($data)));
     }
 
-    protected function generateSign($params, $secretKey)
+    protected function generateSign($data, $secretKey)
     {
-        ksort($params);
+        ksort($data);
         $stringToBeSigned = $secretKey;
-        foreach ($params as $k => $v) {
-            if (!is_array($v) && ($v !== '' && $v !== null)) {
-                $stringToBeSigned .= "$k$v";
+        foreach ($data as $k => $v) {
+            if ($v === null || $v === '') {
+                continue;
             }
+            $stringToBeSigned .= "{$k}{$v}";
         }
         unset($k, $v);
         $stringToBeSigned .= $secretKey;

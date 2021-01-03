@@ -6,7 +6,7 @@ use Pdd\BaseClient;
 use SDK\Kernel\Exceptions\InvalidArgumentException;
 
 /**
- * @property \Pdd\Ddk\Goods\Zs\Unit\UrlClient $url
+ * @property \Pdd\Ddk\Goods\Zs\Unit\Url\Url $url
  */
 class Unit extends BaseClient
 {

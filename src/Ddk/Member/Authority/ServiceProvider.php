@@ -1,6 +1,6 @@
 <?php
 
-namespace Pdd\Ddk\Resource\Url;
+namespace Pdd\Ddk\Member\Authority;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
@@ -11,11 +11,11 @@ class ServiceProvider implements ServiceProviderInterface
 
     public function register(Container $app)
     {
-        $app['ddk.resource.url'] = function ($app) {
+        $app['ddk.member.authority'] = function ($app) {
             /** @var \Pdd\Application $app */
             $app->registerProviders($this->providers);
 
-            return new Url($app);
+            return new Authority($app);
         };
     }
 }

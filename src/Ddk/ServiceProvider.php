@@ -14,6 +14,8 @@ class ServiceProvider implements ServiceProviderInterface
         Goods\ServiceProvider::class,
         Resource\ServiceProvider::class,
         Cms\ServiceProvider::class,
+        Member\ServiceProvider::class,
+        Rp\ServiceProvider::class,
     ];
 
     /**
@@ -22,7 +24,7 @@ class ServiceProvider implements ServiceProviderInterface
     public function register(Container $app)
     {
         $app['ddk'] = function ($app) {
-            /** @var \Jd\Application $app */
+            /** @var \Pdd\Application $app */
             $app->registerProviders($this->providers);
 
             return new Ddk($app);

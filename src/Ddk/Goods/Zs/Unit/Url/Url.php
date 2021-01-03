@@ -1,10 +1,10 @@
 <?php
 
-namespace Pdd\Ddk\Goods\Zs\Unit;
+namespace Pdd\Ddk\Goods\Zs\Unit\Url;
 
 use Pdd\BaseClient;
 
-class UrlClient extends BaseClient
+class Url extends BaseClient
 {
     /**
      * 多多进宝转链接口

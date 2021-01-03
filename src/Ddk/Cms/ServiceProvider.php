@@ -14,7 +14,7 @@ class ServiceProvider implements ServiceProviderInterface
     public function register(Container $app)
     {
         $app['ddk.cms'] = function ($app) {
-            /** @var \Jd\Application $app */
+            /** @var \Pdd\Application $app */
             $app->registerProviders($this->providers);
 
             return new Cms($app);

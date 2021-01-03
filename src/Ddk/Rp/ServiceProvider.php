@@ -1,21 +1,23 @@
 <?php
 
-namespace Pdd\Ddk\Resource\Url;
+namespace Pdd\Ddk\Rp;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
 class ServiceProvider implements ServiceProviderInterface
 {
-    protected $providers = [];
+    protected $providers = [
+        Prom\ServiceProvider::class,
+    ];
 
     public function register(Container $app)
     {
-        $app['ddk.resource.url'] = function ($app) {
+        $app['ddk.rp'] = function ($app) {
             /** @var \Pdd\Application $app */
             $app->registerProviders($this->providers);
 
-            return new Url($app);
+            return new Rp($app);
         };
     }
 }

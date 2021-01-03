@@ -34,9 +34,49 @@ $pdd = new Application('app_key', 'secret_key');
 $pdd->ddk->goods->search();
 ```
 
-## 已封装
+## APIS
 
-- pdd.ddk.goods.search 多多进宝商品查询
-- pdd.ddk.goods.zs.unit.url.gen 多多进宝转链接口
-- pdd.ddk.cms.prom.url.generate 生成商城-频道推广链接
-- pdd.ddk.resource.url.gen 生成多多进宝频道推广
+推广位PID管理
+
+- [ ] pdd.ddk.goods.pid.generate 创建多多进宝推广位
+- [ ] pdd.ddk.goods.pid.query 查询已经生成的推广位信息
+- [ ] pdd.ddk.pid.mediaid.bind 用于存量推广位批量绑定媒体备案id
+
+授权备案
+
+- [x] pdd.ddk.rp.prom.url.generate 生成备案链接
+- [x] pdd.ddk.member.authority.query 查询是否绑定备案
+
+获取商品信息
+
+- [x] pdd.ddk.goods.search 商品搜索
+- [ ] pdd.ddk.goods.recommend.get 商品推荐
+- [ ] pdd.ddk.top.goods.list.query 查询爆款排行商品
+- [ ] pdd.ddk.goods.detail 商品详情
+
+商品推广
+
+- [x] pdd.ddk.goods.promotion.url.generate 生成普通商品推广链接
+
+营销工具
+
+- [x] pdd.ddk.rp.prom.url.generate 生成营销工具推广链接
+- [x] pdd.ddk.cms.prom.url.generate 生成商城推广链接
+
+频道推广
+
+- [x] pdd.ddk.resource.url.gen 生成拼多多主站频道推广链接
+
+转链
+
+- [x] pdd.ddk.goods.zs.unit.url.gen 转链
+
+订单数据
+
+- [ ] pdd.ddk.order.list.increment.get 按更新时间同步已支付后的订单
+- [ ] pdd.ddk.order.list.range.get 按支付时间段查询订单
+- [ ] pdd.ddk.order.detail.get 查询订单详情 
+
+## 相关
+
+- [多多客API](https://jinbao.pinduoduo.com/third-party/rank)
