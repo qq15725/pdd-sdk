@@ -13,6 +13,13 @@ class Converter
         $shopId = $data->get('mall_id');
         $productId = $data->get('goods_id');
 
+        $salesCount = $data->get('sales_tip');
+        if (strpos($salesCount, '万') === false) {
+            $salesCount = (int)$salesCount;
+        } else {
+            $salesCount = (float)str_replace('万', '', $salesCount) * 10000;
+        }
+
         return [
             'channel' => 'pdd',
             'product' => [
@@ -24,20 +31,20 @@ class Converter
                 'desc' => $data->get('goods_desc'),
                 'cover' => $data->get('goods_image_url'),
                 'banners' => $data->get('goods_gallery_urls'),
-                'sales_count' => ((int)$data->get('sales_tip')) * 10000,
+                'sales_count' => $salesCount,
                 'rich_text_images' => [],
                 'url' => null,
             ],
             'coupon_product' => [
                 'price' => $price = (float)($data->get('min_group_price') / 100),
                 'original_price' => $price,
-                'commission_rate' => $commissionRate = (float)($data->get('promotion_rate') / 1000),
+                'commission_rate' => $commissionRate = (float)($data->get('promotion_rate') / 10),
                 'commission_amount' => (float)bcmul(
                     $price,
                     bcdiv(
                         $commissionRate,
                         100,
-                        2
+                        3
                     ),
                     2
                 ),
