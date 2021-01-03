@@ -52,7 +52,7 @@ $pdd->ddk->goods->search();
 - [x] pdd.ddk.goods.search 商品搜索
 - [ ] pdd.ddk.goods.recommend.get 商品推荐
 - [ ] pdd.ddk.top.goods.list.query 查询爆款排行商品
-- [ ] pdd.ddk.goods.detail 商品详情
+- [x] pdd.ddk.goods.detail 商品详情
 
 商品推广
 
