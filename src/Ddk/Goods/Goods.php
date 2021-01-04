@@ -8,6 +8,7 @@ use SDK\Kernel\Exceptions\InvalidArgumentException;
 /**
  * @property \Pdd\Ddk\Goods\Zs\Zs $zs
  * @property \Pdd\Ddk\Goods\Promotion\Promotion $promotion
+ * @property \Pdd\Ddk\Goods\Recommend\Recommend $recommend
  */
 class Goods extends BaseClient
 {

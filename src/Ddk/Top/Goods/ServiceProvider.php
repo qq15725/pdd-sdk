@@ -1,6 +1,6 @@
 <?php
 
-namespace Pdd\Ddk\Goods;
+namespace Pdd\Ddk\Top\Goods;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
@@ -8,15 +8,12 @@ use Pimple\ServiceProviderInterface;
 class ServiceProvider implements ServiceProviderInterface
 {
     protected $providers = [
-        Zs\ServiceProvider::class,
-        Promotion\ServiceProvider::class,
-        Recommend\ServiceProvider::class,
-        Pid\ServiceProvider::class,
+        ListClient\ServiceProvider::class,
     ];
 
     public function register(Container $app)
     {
-        $app['ddk.goods'] = function ($app) {
+        $app['ddk.top.goods'] = function ($app) {
             /** @var \Pdd\Application $app */
             $app->registerProviders($this->providers);
 

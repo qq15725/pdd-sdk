@@ -16,6 +16,9 @@ class ServiceProvider implements ServiceProviderInterface
         Cms\ServiceProvider::class,
         Member\ServiceProvider::class,
         Rp\ServiceProvider::class,
+        Order\ServiceProvider::class,
+        Pid\ServiceProvider::class,
+        Top\ServiceProvider::class,
     ];
 
     /**

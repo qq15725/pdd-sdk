@@ -1,26 +1,21 @@
 <?php
 
-namespace Pdd\Ddk\Goods;
+namespace Pdd\Ddk\Order\ListClient\Detail;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
 class ServiceProvider implements ServiceProviderInterface
 {
-    protected $providers = [
-        Zs\ServiceProvider::class,
-        Promotion\ServiceProvider::class,
-        Recommend\ServiceProvider::class,
-        Pid\ServiceProvider::class,
-    ];
+    protected $providers = [];
 
     public function register(Container $app)
     {
-        $app['ddk.goods'] = function ($app) {
+        $app['ddk.order.list.detail'] = function ($app) {
             /** @var \Pdd\Application $app */
             $app->registerProviders($this->providers);
 
-            return new Goods($app);
+            return new Detail($app);
         };
     }
 }

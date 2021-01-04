@@ -38,9 +38,9 @@ $pdd->ddk->goods->search();
 
 推广位PID管理
 
-- [ ] pdd.ddk.goods.pid.generate 创建多多进宝推广位
-- [ ] pdd.ddk.goods.pid.query 查询已经生成的推广位信息
-- [ ] pdd.ddk.pid.mediaid.bind 用于存量推广位批量绑定媒体备案id
+- [x] pdd.ddk.goods.pid.generate 创建多多进宝推广位
+- [x] pdd.ddk.goods.pid.query 查询已经生成的推广位信息
+- [x] pdd.ddk.pid.mediaid.bind 用于存量推广位批量绑定媒体备案id
 
 授权备案
 
@@ -50,8 +50,8 @@ $pdd->ddk->goods->search();
 获取商品信息
 
 - [x] pdd.ddk.goods.search 商品搜索
-- [ ] pdd.ddk.goods.recommend.get 商品推荐
-- [ ] pdd.ddk.top.goods.list.query 查询爆款排行商品
+- [x] pdd.ddk.goods.recommend.get 商品推荐
+- [x] pdd.ddk.top.goods.list.query 查询爆款排行商品
 - [x] pdd.ddk.goods.detail 商品详情
 
 商品推广
@@ -73,6 +73,6 @@ $pdd->ddk->goods->search();
 
 订单数据
 
-- [ ] pdd.ddk.order.list.increment.get 按更新时间同步已支付后的订单
-- [ ] pdd.ddk.order.list.range.get 按支付时间段查询订单
-- [ ] pdd.ddk.order.detail.get 查询订单详情 
+- [x] pdd.ddk.order.list.increment.get 按更新时间同步已支付后的订单
+- [x] pdd.ddk.order.list.range.get 按支付时间段查询订单
+- [x] pdd.ddk.order.detail.get 查询订单详情 

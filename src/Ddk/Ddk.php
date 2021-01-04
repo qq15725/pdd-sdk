@@ -11,6 +11,9 @@ use SDK\Kernel\Exceptions\InvalidArgumentException;
  * @property \Pdd\Ddk\Cms\Cms $cms
  * @property \Pdd\Ddk\Member\Member $member
  * @property \Pdd\Ddk\Rp\Rp $rp
+ * @property \Pdd\Ddk\Order\Order $order
+ * @property \Pdd\Ddk\Pid\Pid $pid
+ * @property \Pdd\Ddk\Top\Top $top
  */
 class Ddk extends BaseClient
 {
