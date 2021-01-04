@@ -81,7 +81,7 @@ $pdd->ddk->goods->search();
 
 ## API
 
-### 用户授权
+### [用户授权API](https://mai.pinduoduo.com/autopage/83_static_3/index.html)
 
 ```php
 \Pdd\Facades\Pdd::oauth()->getAuthorizeUrl(); // 获取授权地址
