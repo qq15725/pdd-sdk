@@ -123,3 +123,8 @@ $pdd->ddk->goods->search();
 - [x] pdd.ddk.order.list.increment.get 按更新时间同步已支付后的订单
 - [x] pdd.ddk.order.list.range.get 按支付时间段查询订单
 - [x] pdd.ddk.order.detail.get 查询订单详情 
+
+## 其他 SDK
+
+ - [淘宝 SDK](https://github.com/qq15725/taobao-sdk)
+ - [京东 SDK](https://github.com/qq15725/jd-sdk)
