@@ -8,6 +8,7 @@ use Pdd\Application;
 /**
  *
  * @method static \Pdd\Ddk\Ddk ddk()
+ * @method static \Pdd\OAuth\OAuth oauth()
  *
  * @mixin Application
  */

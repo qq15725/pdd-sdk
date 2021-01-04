@@ -8,6 +8,7 @@ use SDK\Kernel\ServiceContainer;
  * Class Application.
  *
  * @property \Pdd\Ddk\Ddk $ddk
+ * @property \Pdd\OAuth\OAuth $oauth
  */
 class Application extends ServiceContainer
 {
@@ -17,6 +18,7 @@ class Application extends ServiceContainer
     protected $providers = [
         Auth\ServiceProvider::class,
         Ddk\ServiceProvider::class,
+        OAuth\ServiceProvider::class,
     ];
 
     /**

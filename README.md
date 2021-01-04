@@ -81,6 +81,14 @@ $pdd->ddk->goods->search();
 
 ## API
 
+### 用户授权
+
+```php
+\Pdd\Facades\Pdd::oauth()->getAuthorizeUrl(); // 获取授权地址
+\Pdd\Facades\Pdd::oauth()->parseAccessToken('code'); // code 换 access_token 
+\Pdd\Facades\Pdd::oauth()->refreshAccessToken('refresh_token'); // 刷新 access_token
+```
+
 ### [多多客API](https://jinbao.pinduoduo.com/third-party/rank)
 
 推广位PID管理
