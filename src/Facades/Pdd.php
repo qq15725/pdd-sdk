@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Facade;
 use Pdd\Application;
 
 /**
+ *
+ * @method static \Pdd\Ddk\Ddk ddk()
+ *
  * @mixin Application
  */
 class Pdd extends Facade
@@ -26,5 +29,26 @@ class Pdd extends Facade
     public static function getFacadeRoot()
     {
         return parent::getFacadeRoot();
+    }
+
+    /**
+     * @param string $method
+     * @param array $args
+     *
+     * @return mixed
+     */
+    public static function __callStatic($method, $args)
+    {
+        $instance = static::getFacadeRoot();
+
+        if (!$instance) {
+            throw new \RuntimeException('A facade root has not been set.');
+        }
+
+        if ($instance->offsetExists($method)) {
+            return $instance->offsetGet($method);
+        }
+
+        return $instance->$method(...$args);
     }
 }

@@ -23,18 +23,53 @@ composer require wxm/pdd-sdk
 
 ## 使用
 
+### PHP 
+
 ```php
-<?php
-
-use Pdd\Application;
-
-$pdd = new Application('app_key', 'secret_key');
+$pdd = new \Pdd\Application('client_id', 'client_secret');
 
 // 例如 pdd.ddk.goods.search 其他接口同理
 $pdd->ddk->goods->search();
 ```
 
-## [多多客API](https://jinbao.pinduoduo.com/third-party/rank)
+### Laravel
+
+1. 注册 ServiceProvider:
+    ```php
+    \Pdd\ServiceProvider::class
+    ```
+    
+2. 发布配置：
+    ```shell
+    php artisan vendor:publish --provider="\Pdd\ServiceProvider" --force
+    ```
+    
+3. 使用
+    ```php
+    // 例如 pdd.ddk.goods.search 其他接口同理
+    \Pdd\Facades\Pdd::ddk()->goods->search();
+    ```
+    
+### Lumen
+
+1. 注册 ServiceProvider:
+   
+    `bootstrap/app.php` 下添加
+
+    ```php
+    $app->register(\Pdd\ServiceProvider::class);
+    ``` 
+2. 手动复制配置文件
+
+3. 使用
+    ```php
+    // 例如 pdd.ddk.goods.search 其他接口同理
+    \Pdd\Facades\Pdd::ddk()->goods->search();
+    ```
+
+## API
+
+### [多多客API](https://jinbao.pinduoduo.com/third-party/rank)
 
 推广位PID管理
 
