@@ -126,5 +126,5 @@ $pdd->ddk->goods->search();
 
 ## 其他 SDK
 
- - [淘宝 SDK](https://github.com/qq15725/taobao-sdk)
- - [京东 SDK](https://github.com/qq15725/jd-sdk)
+ - [淘宝(淘宝联盟) SDK](https://github.com/qq15725/taobao-sdk)
+ - [京东(京东联盟) SDK](https://github.com/qq15725/jd-sdk)
