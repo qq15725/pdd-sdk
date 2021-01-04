@@ -50,7 +50,7 @@ $pdd->ddk->goods->search();
     PDD_APPSECRET=client_secret
     ```
     
-3. 使用
+4. 使用
     ```php
     // 例如 pdd.ddk.goods.search 其他接口同理
     \Pdd\Facades\Pdd::ddk()->goods->search();
@@ -73,7 +73,7 @@ $pdd->ddk->goods->search();
     PDD_APPSECRET=client_secret
     ```
 
-3. 使用
+4. 使用
     ```php
     // 例如 pdd.ddk.goods.search 其他接口同理
     \Pdd\Facades\Pdd::ddk()->goods->search();
