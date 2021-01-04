@@ -44,6 +44,12 @@ $pdd->ddk->goods->search();
     php artisan vendor:publish --provider="\Pdd\ServiceProvider" --force
     ```
     
+3. 配置.env
+    ```dotenv
+    PDD_APPKEY=client_id
+    PDD_APPSECRET=client_secret
+    ```
+    
 3. 使用
     ```php
     // 例如 pdd.ddk.goods.search 其他接口同理
@@ -60,6 +66,12 @@ $pdd->ddk->goods->search();
     $app->register(\Pdd\ServiceProvider::class);
     ``` 
 2. 手动复制配置文件
+
+3. 配置.env
+    ```dotenv
+    PDD_APPKEY=client_id
+    PDD_APPSECRET=client_secret
+    ```
 
 3. 使用
     ```php
