@@ -31,6 +31,7 @@ class Converter
         $data = new Collection($raw);
 
         switch ($apiType) {
+            case 'pdd.ddk.goods.search':
             case 'pdd.ddk.goods.detail':
             case 'pdd.ddk.goods.recommend.get':
             default:
@@ -48,6 +49,7 @@ class Converter
                     'id' => $productId,
                     'shop_id' => $shopId,
                     'category_id' => $data->get('cat_ids.2'),
+                    'category_name' => $data->get('category_name'),
                     'title' => $data->get('goods_name'),
                     'short_title' => $data->get('goods_name'),
                     'desc' => $data->get('goods_desc'),
@@ -65,8 +67,12 @@ class Converter
                             'rule_text' => (float)($data->get('coupon_min_order_amount') / 100),
                             'stock' => (int)$data->get('coupon_remain_quantity'),
                             'total' => (int)$data->get('coupon_total_quantity'),
-                            'started_at' => date('Y-m-d H:i:s', $data->get('coupon_start_time')),
-                            'ended_at' => date('Y-m-d H:i:s', $data->get('coupon_end_time')),
+                            'started_at' => $data->get('coupon_start_time')
+                                ? date('Y-m-d H:i:s', $data->get('coupon_start_time'))
+                                : null,
+                            'ended_at' => $data->get('coupon_end_time')
+                                ? date('Y-m-d H:i:s', $data->get('coupon_end_time'))
+                                : null,
                             'url' => null,
                             'coupon_product' => [
                                 'price' => $price = (float)($data->get('min_group_price') / 100),
