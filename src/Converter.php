@@ -107,8 +107,75 @@ class Converter
         return $data;
     }
 
-    public static function order($raw): array
+    /**
+     * 订单数据转换成统一的数据格式
+     *
+     * @param array $raw
+     * @param bool $retainRaw
+     *
+     * @return array
+     */
+    public static function order(array $raw, $retainRaw = true): array
     {
-        return $raw;
+        if (!$raw) {
+            return [];
+        }
+
+        if (isset($raw[0])) {
+            foreach ($raw as &$itemRaw) {
+                $itemRaw = self::order($itemRaw, $retainRaw);
+            }
+            return $raw;
+        }
+
+        $data = new Collection($raw);
+
+        [$siteId, $adzoneId] = explode('_', $data->get('p_id'));
+
+        try {
+            $customParameters = json_decode($data->get('custom_parameters'), JSON_UNESCAPED_UNICODE);
+        } catch (\Exception $e) {
+            $customParameters = [];
+        }
+
+        $status = $data->get('order_status');
+
+        $data = [
+            'no' => $data->get('order_sn'),
+            'parent_no' => $data->get('order_sn'),
+            'site_id' => $siteId,
+            'site_name' => null,
+            'adzone_id' => $adzoneId,
+            'adzone_name' => null,
+            'product_id' => $data->get('goods_id'),
+            'product_cover' => $data->get('goods_thumbnail_url'),
+            'product_url' => null,
+            'product_title' => $data->get('goods_name'),
+            'shop_name' => null,
+            'type' => $data->get('type'),
+            'terminal' => null,
+            'amount' => $data->get('order_amount'),
+            'commission_rate' => (int)$data->get('promotion_rate'),
+            'commission_amount' => (int)($status == 5 ? $data->get('promotion_amount') : null),
+            'precommission_amount' => (int)$data->get('promotion_amount'),
+            'royalty_amount' => 0,
+            'status' => $status,
+            'extension' => [
+                'uid' => $customParameters['uid'] ?? null,
+            ],
+            'created_at' => date('Y-m-d H:i:s', $data->get('order_create_time')),
+            'paid_at' => date('Y-m-d H:i:s', $data->get('order_pay_time')),
+            'settlemented_at' => $data->get('order_settle_time')
+                ? date('Y-m-d H:i:s', $data->get('order_settle_time'))
+                : null,
+            'refunded' => $status == 4,
+        ];
+
+
+        if ($retainRaw) {
+            $data['raw'] = $raw;
+        }
+
+        return $data;
     }
 }
