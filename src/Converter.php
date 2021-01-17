@@ -63,8 +63,8 @@ class Converter
                             'id' => null,
                             'shop_id' => $shopId,
                             'product_id' => $productId,
-                            'amount' => (float)($data->get('coupon_discount') / 100),
-                            'rule_text' => (float)($data->get('coupon_min_order_amount') / 100),
+                            'amount' => (float)bcdiv($data->get('coupon_discount'), 100, 2),
+                            'rule_text' => (float)bcdiv($data->get('coupon_min_order_amount'), 100, 2),
                             'stock' => (int)$data->get('coupon_remain_quantity'),
                             'total' => (int)$data->get('coupon_total_quantity'),
                             'started_at' => $data->get('coupon_start_time')
@@ -75,9 +75,9 @@ class Converter
                                 : null,
                             'url' => null,
                             'coupon_product' => [
-                                'price' => $price = (float)($data->get('min_group_price') / 100),
+                                'price' => $price = (float)bcdiv($data->get('min_group_price'), 100, 2),
                                 'original_price' => $price,
-                                'commission_rate' => $commissionRate = (float)($data->get('promotion_rate') / 10),
+                                'commission_rate' => $commissionRate = (float)bcdiv($data->get('promotion_rate'), 10, 2),
                                 'commission_amount' => (float)bcmul(
                                     $price,
                                     bcdiv(
