@@ -154,7 +154,7 @@ class Converter
             'shop_name' => null,
             'type' => $data->get('type'),
             'terminal' => null,
-            'amount' => $data->get('order_amount'),
+            'amount' => (int)$data->get('order_amount'),
             'commission_rate' => (int)$data->get('promotion_rate'),
             'commission_amount' => (int)($status == 5 ? $data->get('promotion_amount') : null),
             'precommission_amount' => (int)$data->get('promotion_amount'),
