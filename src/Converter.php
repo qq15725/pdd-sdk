@@ -166,6 +166,7 @@ class Converter
             'status' => $status,
             'extension' => [
                 'uid' => $customParameters['uid'] ?? null,
+                'sid' => $customParameters['sid'] ?? null,
             ],
             'created_at' => date('Y-m-d H:i:s', $data->get('order_create_time')),
             'paid_at' => date('Y-m-d H:i:s', $data->get('order_pay_time')),
