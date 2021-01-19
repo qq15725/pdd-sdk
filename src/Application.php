@@ -28,7 +28,7 @@ class Application extends ServiceContainer
         'version' => 'V1',
         'data_type' => 'JSON',
         'http' => [
-            'timeout' => 10.0,
+            'timeout' => 20.0,
             'base_uri' => 'https://gw-api.pinduoduo.com/api/router',
             'headers' => [
                 'Pdd-Sdk-Type' => 'PHP',
