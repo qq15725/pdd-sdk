@@ -29,7 +29,9 @@ class OAuth extends BaseClient
     protected function httpPost(string $url, array $data = [])
     {
         $handler = HandlerStack::create($this->getGuzzleHandler());
-        $handler->push($this->logMiddleware());
+        if ($this->app->logger) {
+            $handler->push($this->logMiddleware(), 'log');
+        }
 
         $client = new Client([
             'base_uri' => 'http://open-api.pinduoduo.com',
