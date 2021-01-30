@@ -170,7 +170,7 @@ class Converter
             ],
             'created_at' => date('Y-m-d H:i:s', $data->get('order_create_time')),
             'paid_at' => date('Y-m-d H:i:s', $data->get('order_pay_time')),
-            'finished_at' => $data->get('order_receive_time')
+            'received_at' => $data->get('order_receive_time')
                 ? date('Y-m-d H:i:s', $data->get('order_receive_time'))
                 : null,
             'settlemented_at' => $data->get('order_settle_time')
