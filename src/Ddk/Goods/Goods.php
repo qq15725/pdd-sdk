@@ -36,17 +36,17 @@ class Goods extends BaseClient
     /**
      * 多多进宝商品详情查询
      *
-     * @param string $goodsId 商品ID
+     * @param string $goodsSign
      * @param array $query
      *
      * @link https://jinbao.pinduoduo.com/third-party/api-detail?apiName=pdd.ddk.goods.detail
      *
      * @return array
      */
-    public function detail($goodsId = null, $query = [])
+    public function detail($goodsSign, $query = [])
     {
         $query += [
-            'goods_id_list' => $goodsId ? [$goodsId] : $goodsId,
+            'goods_sign' => $goodsSign,
         ];
 
         return $this->httpPost('pdd.ddk.goods.detail', $query);

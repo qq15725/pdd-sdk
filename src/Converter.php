@@ -47,6 +47,7 @@ class Converter
 
                 $data = [
                     'id' => $productId,
+                    'sign' => $data->get('goods_sign'),
                     'shop_id' => $shopId,
                     'category_id' => $data->get('cat_ids.2'),
                     'category_name' => $data->get('category_name'),

@@ -17,18 +17,18 @@ class Url extends BaseClient
      *    唤起拼多多app链接用于非微信内环境。目前支持两种方式唤醒拼多多APP：唤起APPH5和schemaURL，您可根据推广方式自由选择。
      *
      * @param string $pId 推广位ID
-     * @param array|null $goodsIdList 商品ID，仅支持单个查询
+     * @param array|null $goodsSignList 商品goodsSign列表，支持批量生链。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
      * @param array $optional
      *
      * @link https://jinbao.pinduoduo.com/third-party/api-detail?apiName=pdd.ddk.goods.promotion.url.generate
      *
      * @return array
      */
-    public function generate(string $pId, array $goodsIdList = null, $optional = [])
+    public function generate(string $pId, array $goodsSignList = null, $optional = [])
     {
         $optional += [
             'p_id' => $pId,
-            'goods_id_list' => $goodsIdList,
+            'goods_sign_list' => $goodsSignList,
         ];
 
         return $this->httpPost('pdd.ddk.goods.promotion.url.generate', $optional);
